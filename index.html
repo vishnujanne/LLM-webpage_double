@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Food Delivery Service</title>
+<style>
+  body { background-color: #f0c040; font-family: Arial, sans-serif; }
+  .header, .footer { background-color: #333; color: white; padding: 1em; text-align: center; }
+  .nav { margin-bottom: 20px; overflow: hidden; }
+  .nav button { background-color: #4CAF50; color: white; padding: 14px 20px; margin: 4px 2px; cursor: pointer; }
+  .accordion { cursor: pointer; padding: 18px; width: 100%; text-align: left; border: none; outline: none; transition: 0.4s; }
+  .panel { padding: 0 18px; background-color: white; display: none; overflow: hidden; }
+  .item { margin: 20px; padding: 10px; background: #ddd; }
+  .add-to-cart { background-color: #4CAF50; color: white; padding: 10px; cursor: pointer; }
+  .footer a { color: white; padding: 10px; text-decoration: none; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>Food Delivery Service</h1>
+  <div class="nav">
+    <button>Home</button>
+    <button>Account</button>
+    <button>Delivery History</button>
+    <button>Login</button>
+    <button>Signup</button>
+    <input type="search" placeholder="Search...">
+  </div>
+</div>
+
+<button class="accordion">New Items</button>
+<div class="panel">
+  <p>Photo of New Item 1</p>
+  <p>Photo of New Item 2</p>
+</div>
+
+<div class="item">Item 1 <button class="add-to-cart">Add to Cart</button></div>
+<div class="item">Item 2 <button class="add-to-cart">Add to Cart</button></div>
+<!-- Add more items here -->
+
+<div class="footer">
+  <a href="#">Facebook</a> |
+  <a href="#">Twitter</a> |
+  <a href="#">Instagram</a>
+</div>
+
+<script>
+document.querySelectorAll('.accordion').forEach(button => {
+  button.addEventListener('click', function() {
+    this.classList.toggle('active');
+    var panel = this.nextElementSibling;
+    if (panel.style.display === "block") {
+      panel.style.display = "none";
+    } else {
+      panel.style.display = "block";
+    }
+  });
+});
+</script>
+</body>
+</html>
